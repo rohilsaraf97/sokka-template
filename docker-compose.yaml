@@ -1,0 +1,44 @@
+version: '3.7'
+
+volumes:
+  mongo_data:
+    driver: local
+
+services:
+  mongo:
+  #   container_name: mongo
+  #   image: mongo
+  #   restart: unless-stopped
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: admin
+  #     MONGO_INITDB_ROOT_PASSWORD: password
+  #     MONGO_INITDB_DATABASE: server
+  #   volumes:
+  #     - 'mongo_data:/data/db'
+  #   ports:
+  #     - 27017:27017
+  # mongo-express:
+  #   image: mongo-express
+  #   restart: unless-stopped
+  #   ports:
+  #     - 8081:8081
+  #   environment:
+  #     ME_CONFIG_MONGODB_ADMINUSERNAME: admin
+  #     ME_CONFIG_MONGODB_ADMINPASSWORD: password
+  #     ME_CONFIG_MONGODB_URL: mongodb://admin:password@mongo:27017/
+  server:
+    container_name: capstone_server
+    build:
+      context: .
+      dockerfile: dockerfile.dev
+    ports:
+      - 4000:4000
+    env_file:
+      - .env
+    # depends_on:
+    #   - mongo
+    # links:
+    #   - mongo
+    volumes:
+      - .:/app
+      - /app/node_modules
