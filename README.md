@@ -1,7 +1,7 @@
 # Node+Express, Mongo, Winston, Morgan, Docker, ESLint, Prettier, Husky Template
 An opinionated node, express and mongo backend template with winston logger, morgan request logger, and docker support out of the box. These technologies are the most popular and reliable in the industry, and with this template you can spin up a properly orgnanized express server with in no time.
 
-> **⚠️**  Ensure that the `.env` file is in place before you proceed. The `sample.env` file can be referred to for making the `.env` file.
+> **⚠️**  Ensure that the `.env` file is in place before you proceed. The `sample.env` file can be referred to for writing the `.env` file.
 
 ## Getting started
 To get started with this template, follow these steps:
