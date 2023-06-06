@@ -20,7 +20,6 @@ const loaders = async ({ app }) => {
       })
     )
     app.use(morganMiddleware)
-    return app
   } catch (err) {
     logger.error(err.stack)
   }
