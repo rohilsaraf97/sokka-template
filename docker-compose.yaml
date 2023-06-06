@@ -5,7 +5,7 @@ volumes:
     driver: local
 
 services:
-  mongo:
+  # mongo:
   #   container_name: mongo
   #   image: mongo
   #   restart: unless-stopped
@@ -27,7 +27,7 @@ services:
   #     ME_CONFIG_MONGODB_ADMINPASSWORD: password
   #     ME_CONFIG_MONGODB_URL: mongodb://admin:password@mongo:27017/
   server:
-    container_name: capstone_server
+    container_name: server
     build:
       context: .
       dockerfile: dockerfile.dev
